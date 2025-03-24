@@ -70,10 +70,14 @@ function drawLetter(posx, posy, letterData) {
   let pos2y = posy + letterData["offsety"];
 
   // draw two circles
-  fill(darkGreen);
+  /*fill(darkGreen);
   ellipse(posx, posy, 150, 150);
   fill(lightGreen);
-  ellipse(pos2x, pos2y, size2, size2);
+  ellipse(pos2x, pos2y, size2, size2);*/
+
+  line(posx, posy, posx+150, posy-150);
+  line(posx+150, posy-150, posx+150, posy-225)
+
 }
 
 function keyTyped() {
@@ -84,3 +88,4 @@ function keyTyped() {
     saveBlocksImages(true);
   }
 }
+
