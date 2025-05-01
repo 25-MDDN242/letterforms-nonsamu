@@ -38,6 +38,7 @@ let curSwapWord = 0;
 var defaultSwapWords = [
   "ACTUALLY",
   "1234567?",
+  " GLORBO ",
   "EXPECTED",
   "PROPERTY",
   "ADDITION",
