@@ -27,7 +27,7 @@ function drawLetter(letterData) {
  const centerX = 50;
 const centerY = 150;
 
-  // ✨ First pass: Draw all glow arcs
+  //Draw all glow arcs
   for (let i = 1; i <= 4; i++) {
     const r = letterData["r" + i];
     const start = letterData["start" + i];
@@ -38,7 +38,7 @@ const centerY = 150;
     const scaleY = letterData["scaleY" + i] || 1;
   
     if (r && start !== undefined && stop !== undefined) {
-      // 💡 Layered glow: from outermost (faint) to innermost (strong)
+      //Layer
       const layers = [
         { weight: 20, alpha: 30 },
         { weight: 14, alpha: 50 },
@@ -49,7 +49,7 @@ const centerY = 150;
         push();
         translate(x, y);
         scale(scaleX, scaleY);
-        stroke(0, 255, 255, layer.alpha); // Electric blue with fading opacity
+        stroke(0, 255, 255, layer.alpha); //Electric blue with fading opacity
         strokeWeight(layer.weight);
         noFill();
         arc(0, 0, r * 2, r * 2, start, stop);
@@ -58,7 +58,7 @@ const centerY = 150;
     }
   }
 
-  // ✏️ Second pass: Draw all normal white arcs
+  //Draw all normal white arcs
   for (let i = 1; i <= 4; i++) {
     const r = letterData["r" + i];
     const start = letterData["start" + i];
@@ -72,8 +72,8 @@ const centerY = 150;
       push();
       translate(x, y);
       scale(scaleX, scaleY);
-      stroke(255); // Pure white
-      strokeWeight(4); // Normal thickness
+      stroke(255); //Pure white
+      strokeWeight(4); //Normal thickness
       noFill();
       arc(0, 0, r * 2, r * 2, start, stop);
       pop();
